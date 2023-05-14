@@ -1,0 +1,39 @@
+/* ==UserStyle==
+@name           Better Bluesky Notifs
+@description    Make direct replies more visible on bluesky web
+@namespace      https://github.com/lunasorcery
+@version        1.0.0
+@author         lunasorcery
+@license        MIT
+==/UserStyle== */
+
+@-moz-document url("https://staging.bsky.app/notifications") {
+    /* IMPORTANT NOTE:
+    This userstyle is entirely dependent on your profile's two IDs:
+    - your domain handle, used to detect direct replies
+    - your DID, used to detect tags/mentions
+
+    Right now, the usercss is using placeholder IDs, you'll need to replace the profile IDs with your own.
+
+    You can find your DID in Bluesky by visiting Settings -> Change My Handle -> I Have My Own Domain, and it'll be visible in the text there.
+    You don't need to actually change your handle, this is just the easiest way to find your DID!
+    */
+
+    /* highlight direct replies and tags in light mode - make sure to replace those URLs with your own! */
+    div.r-14lw9ot div[role="link"][class="css-175oi2r r-5kkj8d r-1sp51qo r-ry3cjt"]:has(
+        a[href="/profile/example.tiredand.gay"],
+        a[href="/profile/did:plc:asdfhjklasdfhjklasdfhjkl"]
+    ) {
+        background-color: rgb(255, 220, 240) !important;
+        border-color: rgb(220, 120, 180) !important;
+    }
+
+    /* highlight direct replies and tags in dark mode - make sure to replace those URLs with your own! */
+    div.r-kemksi div[role="link"][class="css-175oi2r r-5kkj8d r-1sp51qo r-ry3cjt"]:has(
+        a[href="/profile/example.tiredand.gay"],
+        a[href="/profile/did:plc:asdfhjklasdfhjklasdfhjkl"]
+    ) {
+        background-color: rgb(64,0,32) !important;
+        border-color: rgb(128,0,64) !important;
+    }
+}
