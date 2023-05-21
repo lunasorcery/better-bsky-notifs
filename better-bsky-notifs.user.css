@@ -7,7 +7,7 @@
 @license        MIT
 ==/UserStyle== */
 
-@-moz-document url("https://staging.bsky.app/notifications") {
+@-moz-document url("https://staging.bsky.app/notifications"), url("https://bsky.app/notifications") {
     /* IMPORTANT NOTE:
     This userstyle is entirely dependent on your profile's two IDs:
     - your domain handle, used to detect direct replies
